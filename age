@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Создаем переменную age и отнесем её к классу Scanner
+        Scanner age = new Scanner(System.in);
+
+        // Запрашиваем возраст у пользователя для Васи
+        System.out.println("Введите возраст для Васи (по заданию 32):");
+        int vasyaAge = age.nextInt();
+        if (vasyaAge != 32)
+            System.out.println("Вы ввели " + vasyaAge + ", вмсето положенных 32!");
+        System.out.println("--------------------------------------------------------");
+
+        // Запрашиваем возраст у пользователя для Кати
+        System.out.println("Введите возраст для Кати (по заданию 14):");
+        int katyaAge = age.nextInt();
+        if (katyaAge != 14)
+            System.out.println("Вы ввели " + katyaAge + ", вмсето положенных 14!");
+        System.out.println("--------------------------------------------------------");
+
+        // Запрашиваем возраст у пользователя для Миши
+        System.out.println("Введите возраст для Миши (по заданию 40):");
+        int mishaAge = age.nextInt();
+        if (mishaAge != 40)
+            System.out.println("Вы ввели " + mishaAge + ", вмсето положенных 40!");
+        System.out.println("--------------------------------------------------------");
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        // Создаем упрощенные переменные для Васи, Кати и Миши
+        // P.S. Требуется в задании
+
+        int min = vasyaAge;
+        int middle = katyaAge;
+        int max = mishaAge;
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        // Вычисляем наменьшее число (возраст) "Minimal age"
+        if (min < middle && min < max) {
+            System.out.println("Minimal age: " + min);
+        } else if (middle < max && middle < min) {
+            System.out.println("Minimal age: " + middle);
+        } else if (max < middle && max < min) {
+            System.out.println("Minimal age: " + max);
+        }
+
+        // Вычисляем среднее число (возраст) "Middle age"
+        if (min > middle && min < max || min > max && min < middle) {
+            System.out.println("Middle age: " + min);
+        } else if (middle > min && middle < max || middle > max && middle < min) {
+            System.out.println("Middle age: " + middle);
+        } else if (max < middle && max > min || max < min && max > middle) {
+            System.out.println("Middle age: " + max);
+        }
+
+        // Вычисляем наибольшее число (возраст) "Maximum age"
+        if (min > middle && min > max) {
+            System.out.println("Maximum age: " + min);
+        } else if (middle > max && middle > min) {
+            System.out.println("Maximum age: " + middle);
+        } else if (max > middle && max > min) {
+            System.out.println("Maximum age: " + max);
+        }
+    }
+}
